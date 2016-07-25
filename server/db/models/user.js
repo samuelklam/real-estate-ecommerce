@@ -16,10 +16,15 @@ module.exports = db.define('user', {
     },
     creditCard: {
         type: Sequelize.INTEGER,
+        isCreditCard: true,
         allowNull: true
     },
     isAdmin: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue: "false"
+    },
+    orderHistory:{
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
     },
     password: {
         type: Sequelize.STRING
