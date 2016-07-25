@@ -3,10 +3,20 @@ var Sequelize = require('sequelize');
 var db = require('../_db');
 
 module.exports = db.define('building', {
-    location: {
+    streetAddress: {
         type: Sequelize.STRING,
-        unique: true,
         allowNull: false,
+    },
+    city: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    state: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    zipCode:{
+        type: Sequelize.INTEGER
     },
     price: {
         type: Sequelize.STRING,
@@ -14,7 +24,7 @@ module.exports = db.define('building', {
           isDecimal: true
         }
     },
-    PropertyType: {
+    propertyType: {
         type: Sequelize.ENUM('Commercial','Residential','Mixed')
     },
     lotSize:{
@@ -40,6 +50,10 @@ module.exports = db.define('building', {
     },
     photoURL: {
         type: Sequelize.STRING
+    },
+    ownerId:{
+        type: Sequelize.INTEGER,
+        defaultValue: "0"
     }
 
 });
