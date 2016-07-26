@@ -33,6 +33,9 @@ module.exports = db.define('building', {
     stories:{
         type: Sequelize.INTEGER
     },
+    squareFootage:{
+        type: Sequelize.INTEGER
+    },
     numberOfUnits: {
         type: Sequelize.INTEGER
     },
