@@ -7,7 +7,7 @@ app.factory('BuildingFactory', function ($http) {
     .then(function (response) { return response.data; });
   };
 
-    BuildingFactory.fetchone = function (id) {
+    BuildingFactory.fetchOne = function (id) {
     return $http.get('/api/buildings/' +id)
     .then(function (response) { return response.data; });
   };
