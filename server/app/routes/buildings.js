@@ -6,7 +6,7 @@ var Building = db.Building;
 
 router.get('/:id', function(req, res, next){
 
-  Building.findAll({where:{id:req.params.id}})
+  Building.findById({where:{id:req.params.id}})
   .then(building=> res.send(building))
   .catch(function(err){console.error(err); res.status(500).end();});
 })
