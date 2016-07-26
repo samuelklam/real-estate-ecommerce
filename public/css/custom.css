@@ -3,3 +3,8 @@
   width: auto;
   max-height: 60px;
 }
+
+#login-form {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
