@@ -11,6 +11,4 @@ module.exports = db.define('cart', {
      type: Sequelize.ARRAY(Sequelize.INTEGER)
   }
 
-
-
 })
