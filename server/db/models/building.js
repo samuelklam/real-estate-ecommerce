@@ -5,24 +5,21 @@ var db = require('../_db');
 module.exports = db.define('building', {
     streetAddress: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: false
     },
     city: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: false
     },
     state: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: false
     },
     zipCode:{
         type: Sequelize.INTEGER
     },
     price: {
-        type: Sequelize.STRING,
-        validate:{
-          isDecimal: true
-        }
+        type: Sequelize.DECIMAL(15,2)
     },
     propertyType: {
         type: Sequelize.ENUM('Commercial','Residential','Mixed')

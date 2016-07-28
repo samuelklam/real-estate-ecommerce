@@ -67,7 +67,7 @@ describe('Buildings Route', function () {
         });
       });
 
-      it('GET types', function (done) {
+/*      it('GET types', function (done) {
         agent
         .get('/api/buildings/types')
         .expect(200)
@@ -77,7 +77,7 @@ describe('Buildings Route', function () {
           // expect(res.body[0]).to.be.typeof(String);
           done();
         });
-      });
+      });*/
 
   });
 

@@ -1,3 +1,4 @@
+//single building page
 app.config(function ($stateProvider) {
   $stateProvider.state('building', {
     url: '/properties/:id',
@@ -12,12 +13,28 @@ app.config(function ($stateProvider) {
 })
 
 app.controller('BuildingCtrl', function($scope, theBuilding, $log){
-$scope.building = theBuilding;
+  $scope.building = theBuilding;
+})
+
+//building child states for reviews
+app.config(function ($stateProvider) {
+  $stateProvider.state('building.reviews', {
+    url: '/reviews',
+    templateUrl: 'js/building-detail/building-reviews.html'/*,
+    resolve:{
+      theBuilding: function (BuildingFactory, $stateParams){
+        return BuildingFactory.fetchOne($stateParams.id);
+      }*/
+    //}
+  })
+  .state('building.write', {
+    url: '/write',
+    templateUrl: 'js/building-detail/building-write.html'
+  })
 })
 
 
-
-
+//all buildings page
 app.config(function ($stateProvider) {
   $stateProvider.state('buildings', {
     url: '/properties',
@@ -32,5 +49,6 @@ app.config(function ($stateProvider) {
 })
 
 app.controller('BuildingsCtrl', function($scope, allBuildings){
-$scope.buildings = allBuildings;
+  $scope.buildings = allBuildings;
 })
+

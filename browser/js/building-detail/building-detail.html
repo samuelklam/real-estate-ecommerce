@@ -50,72 +50,30 @@
             <section class="map">
               <h2> Property Map </h2>
               <div class="map-wrap">
-                <div id="map-view"></div>
+                <google-map id="custom-map-two"></google-map>
               </div>
             </section>
 
-            <section id="detail-cart">
-              <h2>Add to Cart <i class="fa fa-shopping-cart"></i></h2>
-            </section>
+
+            <div>
+              <a class="btn btn-default btn-effect" ui-sref="building.reviews" id="reviews-button">Click to see reviews</a>
+              <a class="btn btn-default btn-effect" id="reviews-button" ui-sref="building.write" id="reviews-button">Write a review<i class="fa fa-pencil"></i></a>
+
+              <ui-view></ui-view>
+            </div>
+
           </div>
         </div>
 
-        <div class="col-md-3 col-sm-4 col-md-offset-1 col-xs-12">
-          <div class="sale-rent-info">
+        <div class="col-md-3 col-sm-3 col-md-offset-1">
+          <div class="sale-rent-info" id="cart-box">
             <div class="resto-info">
-              <ul class="auto-tab-list">
-                <li class="active"> <a href="#">search</a> </li>
-                <li> <a ui-sref="buildings">sales</a> </li>
-              </ul>
-              <div class="mid clearfix">
-                <div class="form-field">
-                  <div class="btn-group">
-                    <input type="search" placeholder="City, State or Country Zip" />
-                    <i class="fa fa-search"> </i> </div>
-                  <div class="btn-group">
-                    <button class="btn dropdown-toggle" name="recordinput" data-toggle="dropdown"> <span class="select-text" >Property type</span><span class="caret">&nbsp;</span> </button>
-                    <ul class="dropdown-menu choice">
-                      <li> <a href="#">360 Modena</a> </li>
-                      <li> <a href="#">DS3 </a> </li>
-                      <li> <a href="#">M32dr</a> </li>
-                      <li> <a href="#">V40 </a> </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="form-field">
-                  <div class="btn-group">
-                    <button class="btn dropdown-toggle" name="recordinput" data-toggle="dropdown"> <span class="select-text" >Beds</span><span class="caret">&nbsp;</span> </button>
-                    <ul class="dropdown-menu choice">
-                      <li> <a href="#">Single</a> </li>
-                      <li> <a href="#">Double </a> </li>
-                      <li> <a href="#">Double Double</a> </li>
-                    </ul>
-                  </div>
-                  <div class="btn-group">
-                    <button class="btn dropdown-toggle" name="recordinput" data-toggle="dropdown"> <span class="select-text" >Baths</span><span class="caret">&nbsp;</span> </button>
-                    <ul class="dropdown-menu choice">
-                      <li> <a href="#">360 Modena</a> </li>
-                      <li> <a href="#">DS3 </a> </li>
-                      <li> <a href="#">M32dr</a> </li>
-                      <li> <a href="#">V40 </a> </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="form-field">
-                  <div class="price-meter-wrap"> <span class="meter-label">Price </span>
-                    <div class="range-wrap"> <span id="amount1"> </span> <span id="amount"> </span>
-                      <div id="slider-meter"></div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12"> <a href="#" class="btn btn-default btn-effect"> search <i> <img src="/img/arrow-btn.png" alt="" /> </i> </a> </div>
-                  </div>
-                </div>
-              </div>
+              <br><br>
+              <button class="btn btn-default btn-effect"><h2 class="text-center">Add to Cart<i class="fa fa-shopping-cart"></i></h2></button>
             </div>
           </div>
-
         </div>
+
       </div>
     </div>
   </section>

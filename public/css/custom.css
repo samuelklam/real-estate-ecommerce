@@ -22,7 +22,16 @@
   float:right;
 }
 
-#detail-cart {
-  background-color: lightyellow;
-  margin-bottom: 100px;
+#cart-box {
+  position: fixed;
+  width: 287px;
+}
+
+#reviews-button {
+  width: 173px;
+  display: inline-block;
+}
+
+#footer {
+  margin-top: 20px;
 }

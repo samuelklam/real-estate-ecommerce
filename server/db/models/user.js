@@ -6,6 +6,9 @@ var Sequelize = require('sequelize');
 var db = require('../_db');
 
 module.exports = db.define('user', {
+    name: {
+        type: Sequelize.STRING
+    },
     email: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -15,7 +18,7 @@ module.exports = db.define('user', {
         }
     },
     creditCard: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         isCreditCard: true,
         allowNull: true
     },
