@@ -12,7 +12,7 @@ router.get('/:id', function(req, res, next){
 
 router.put('/:id', function (req, res, next) {
   Cart.upsert(req.body, {where: {id: req.params.id}})
-  .then(cart=>res.send(cart))
+  .then(cart=>res.send(cart)) // OB/BG: confirm that `cart` here is the updated version
   .catch(function(err){console.error(err); res.status(500).end(); });
 })
 

@@ -23,7 +23,7 @@ app.config(function ($stateProvider) {
 // all buildings page
 app.config(function ($stateProvider) {
   $stateProvider.state('buildings', {
-    url: '/properties',
+    url: '/properties', // OB/BG: can have a query string on the end
     templateUrl: 'js/building-detail/templates/buildings.html',
     controller: 'BuildingsCtrl',
     resolve:{

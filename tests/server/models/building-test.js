@@ -14,6 +14,7 @@ describe('Building model', function () {
 
     describe('fields', function () {
 
+        // OB/BG: focus more on validation than identity
         it('has a streetAddress and price fields', function () {
             return Building.create({
                 streetAddress: '123 Example St',
@@ -66,7 +67,7 @@ describe('Building model', function () {
             })
         });
 
-        it('propertyType must be Commercial, Residential, or Mixed', function (done) {
+        it('propertyType must be Commercial, Residential, or Mixed', function (done) { // OB/BG: done with done
             var building = Building.build({
                 streetAddress:"123 Example St",
                 city: 'TestTown',

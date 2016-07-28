@@ -4,6 +4,7 @@ var router = new express.Router();
 var db = require('../../db');
 var Building = db.Building;
 
+// OB/BG: roll these next three into one route /api/buildings?type=commercial -- you did it already great job!
 router.get('/commercial', function(req, res, next) {
   Building.findAll({
     where: {
@@ -11,7 +12,7 @@ router.get('/commercial', function(req, res, next) {
     }
   })
   .then(commercialBuildings => res.send(commercialBuildings))
-  .catch(err=>console.error);
+  .catch(err=>console.error); // OB/BG: call next on the error
 })
 
 router.get('/residential', function(req, res, next) {
@@ -51,7 +52,7 @@ router.get('/', function(req, res, next){
   .catch(err=>console.error);
 })
 
-router.get('/types', function(req, res, next){
+router.get('/types', function(req, res, next){ // OB/BG: duplicate
   res.send(Building.rawAttributes.propertyTypes.values);
 });
 

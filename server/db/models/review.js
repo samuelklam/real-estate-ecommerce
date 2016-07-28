@@ -14,9 +14,9 @@ module.exports = db.define('review', {
   },
   numOfStars:{
     type: Sequelize.INTEGER,
-    max: 5
+    max: 5 // OB/BG: also maybe `min`
   },
-  datePosted:{
+  datePosted:{ // OB/BG: could remove if you want
     type: Sequelize.STRING,
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
   }

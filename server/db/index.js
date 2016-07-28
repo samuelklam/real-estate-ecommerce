@@ -9,6 +9,7 @@ db.Order = require('./models/order');
 db.Review = require('./models/review');
 
 
+// OB/BG: probably want more of a good thing (associations)
 db.Order.belongsTo(db.User);
 db.Order.belongsTo(db.Cart);
 db.Cart.belongsTo(db.User);

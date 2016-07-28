@@ -29,7 +29,7 @@ describe('Buildings Route', function () {
       price: '1200.00'
     };
 
-    beforeEach('Create a building', function (done) {
+    beforeEach('Create a building', function (done) { // OB/BG: <3
       return Building.create(buildingInfo)
       .then(createdBuilding => {
           building = createdBuilding;
@@ -44,6 +44,7 @@ describe('Buildings Route', function () {
 
   describe('/api/buildings', function () {
 
+      // OB/BG: supertest-as-promised
       it('GET all', function (done) {
         agent
         .get('/api/buildings')
@@ -67,6 +68,7 @@ describe('Buildings Route', function () {
         });
       });
 
+      // OB/BG: bury dead code
 /*      it('GET types', function (done) {
         agent
         .get('/api/buildings/types')

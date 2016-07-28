@@ -2,9 +2,10 @@ var Sequelize = require('sequelize');
 
 var db = require('../_db');
 
+// OB/BG: 'item' model productId, priceAtPurchase
 module.exports = db.define('order', {
 
-  userId:{
+  userId:{ // OB/BG: through associations, also consider guests
     type: Sequelize.INTEGER
   },
   arrayOfBuildingIds:{
@@ -13,8 +14,8 @@ module.exports = db.define('order', {
   arrayOfPurchasePrices:{
     type: Sequelize.ARRAY(Sequelize.INTEGER)
   },
-  totalPrice:{
-        type: Sequelize.STRING,
+  totalPrice:{ // OB/BG: could be a getter method
+        type: Sequelize.STRING, // OB/BG: probably want INTEGER with cents
         validate:{
           isDecimal: true
         }

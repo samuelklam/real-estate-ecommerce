@@ -1,6 +1,6 @@
 app.config(function($stateProvider){
   $stateProvider.state('search-results', {
-    url: '/buildings/:searchProps',
+    url: '/buildings/:searchProps', // OB/BG: maybe use query string params
     templateUrl: 'js/search-results/search-results.html',
     controller: 'ResultsCtrl',
     resolve: {
