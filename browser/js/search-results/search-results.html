@@ -1,0 +1,24 @@
+<div id="content">
+<section class="new-sale">
+  <div class="container" >
+    <h2> Search Results </h2>
+    <div class="row">
+      <div ng-repeat="building in buildings" class="col-md-4 col-sm-6 zoom">
+        <div class="rent-box">
+          <figure class="rent-description"> <a ui-sref="building({id: building.id})"><img src={{building.photoURL}} alt="" /></a> </figure>
+          <div class="property-widget">
+            <div class="property-header clearfix"> <strong class="caption">{{building.propertyType}} </strong><span>{{building.squareFootage}}</span> </div>
+            <h3><a href="#">{{building.streetAddress}}</a></h3>
+            <ul>
+              <li> Stories <span class="avl-no">{{building.stories}}</span> </li>
+              <li> Units <span class="avl-no">{{building.numberOfUnits}}</span> </li>
+              <li> Building Age <span class="avl-no">{{building.buildingAge}}</span> </li>
+            </ul>
+            <span class="price">$ {{building.price}}</span> <a href="#" id="add-cart">  <i class="fa fa-shopping-cart"></i> Add to Cart</a></div>
+        </div>
+      </div>
+
+<!--     <a href="#" class="btn btn-default btn-effect"> view more <i> <img src="/img/arrow-btn.png" alt="" /> </i></a> -->
+    </div>
+</section>
+</div>
