@@ -74,7 +74,7 @@ describe('Buildings Route', function () {
         .end(function (err, res) {
           if (err) return done(err);
           expect(res.body).to.be.instanceof(Array);
-          expect(res.body[0]).to.be.typeof(String);
+          // expect(res.body[0]).to.be.typeof(String);
           done();
         });
       });*/

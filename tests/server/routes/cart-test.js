@@ -1,4 +1,3 @@
-// Instantiate all models
 var expect = require('chai').expect;
 
 var Sequelize = require('sequelize');
@@ -22,13 +21,14 @@ describe('Carts Route', function () {
     });
 
     var cartInfo = {
-      demo: 'great'
+      arrayOfBuildingIds: [1,2,3]
     };
 
     beforeEach('', function (done) {
       return Cart.create(cartInfo)
-      .then(createdBuilding => {
-          cart = createdBuilding;
+      .then(createdCart => {
+          createdCart.setUser(1)
+          cart = createdCart;
           done()
       })
       .catch(done);
@@ -40,19 +40,18 @@ describe('Carts Route', function () {
 
   describe('/api/carts', function () {
 
-      it('GET all', function (done) {
+      it('GET a cart', function (done) {
         agent
-        .get('/api/carts')
+        .get('/api/carts/1')
         .expect(200)
         .end(function (err, res) {
           if (err) return done(err);
-          expect(res.body).to.be.instanceof(Array);
-          expect(res.body).to.have.length(1);
+          console.log('helloooooooo', res.body)
           done();
         });
       });
 
-      it('GET one', function (done) {
+/*      it('GET one', function (done) {
         agent
         .get('/api/buildings/' + building.id)
         .expect(200)
@@ -61,7 +60,7 @@ describe('Carts Route', function () {
           expect(res.body.title).to.equal(building.title);
           done();
         });
-      });
+      });*/
 
   });
 
